@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import Table from "./components/Table";
+import FilterButtons from "./components/Filter";
+import RemoveOther from "./components/RemoveOther";
+import RemoveAorB from "./components/RemoveAorB";
 
 function App() {
+  const animals = [
+    {
+      fullname: "Mandu the amazing cat",
+      age: 9,
+    },
+    {
+      fullname: "Mia the black cat",
+      age: 9,
+    },
+    {
+      fullname: "Leeloo the growing dog",
+      age: 1,
+    },
+    {
+      fullname: "Toothless the trained dragon",
+      age: 14,
+    },
+    {
+      fullname: "ScoobyDoo the wondering dog",
+      age: 58,
+    },
+    {
+      fullname: "Horsey the horsing horse",
+      age: 10,
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+      <h1>Animals</h1>
+      <FilterButtons />
+      <hr />
+      <Table animals={animals} />
+      <RemoveOther />
+      <RemoveAorB />
+    </section>
   );
 }
 
